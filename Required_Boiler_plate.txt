@@ -1,0 +1,77 @@
+Steps to create a server/website
+.Create a new directory ____
+.initialise NPM and install body-parser,mongoose,ejs,and express
+.create a new file called app.js
+.inside app.js add server code -below
+/*
+const express = require("express");
+const bodyParser = require("body-parser");
+const ejs = require("ejs");
+const mongoose = require("mongoose");
+
+const app = express();
+
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(express.static("public"));
+
+
+app.listen(3000, function () {
+    console.log("Server started on port 3000");
+});
+
+*/
+
+.Setup MongoDB:
+
+>DB name is___wikiDB
+/*after (app.use...)
+mongoose.set('strictQuery', true);
+mongoose.connect("mongodb://127.0.0.1:27017/wikiDB");
+*/
+>collection name___articles
+/*create schema
+//create schema
+const articleSchema = {
+    title: String,
+    content: String
+};
+*/
+
+>Document has 2 field:___ and ___(there can be more than two)
+/*
+//create model
+const Article = mongoose.model("Article", articleSchema);
+
+*/
+
+
+{
+    "_id" : ObjectId("63a2845820a5db6bceb0d62e"),
+    "title" : "REST",
+    "content" : "REST is short for Representational State Transfer. its an architectural style for designing API"
+}
+{
+    "_id" : ObjectId("63a2851020a5db6bceb0d631"),
+    "title" : "Bootstrap",
+    "content" : "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,"
+}
+{
+    "_id" : ObjectId("63a285b220a5db6bceb0d632"),
+    "title" : "DOM",
+    "content" : "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,"
+}
+{
+    "_id" : ObjectId("63a2980b5fabfd7b4b51cc8e"),
+    "title" : "jack-Bauer",
+    "content" : "Tripura is a hilly state in northeast India, bordered on 3 sides by Bangladesh, and home to a diverse mix of tribal cultures and religious groups.",
+    "__v" : NumberInt(0)
+}
+
+
+
+
